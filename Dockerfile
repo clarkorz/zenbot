@@ -1,8 +1,9 @@
-FROM node:latest
+FROM node:6
+MAINTAINER Clark Wang <clark.wangs@gmail.com>
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 
-RUN npm install
+RUN npm install && npm cache clear
 
 EXPOSE 3013
